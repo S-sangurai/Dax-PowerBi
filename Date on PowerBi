@@ -1,0 +1,19 @@
+dDate = 
+VAR MyCalendar=CALENDARAUTO()
+
+RETURN
+
+ADDCOLUMNS (MyCalendar,
+"Year",YEAR([Date]),
+"Quarter",FORMAT([Date],"\Qq"),
+"Month",MONTH([Date]),
+"Day",DAY([Date]),
+"MonthName",FORMAT([Date],"mmmm"),
+"YearMonth",FORMAT([Date],"yyyy-mm"),
+"YearMonthName",FORMAT([Date],"yyyy-mmm"),
+"WeekDayNum",WEEKDAY([Date],2),
+"WeekDayName",FORMAT([Date],"dddd"),
+"DateText",FORMAT([Date],"yyyy-mm-dd"),
+"Start of Month",EOMONTH([Date],-1)+1,
+"End of Month",EOMONTH([Date],0)
+)
